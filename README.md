@@ -135,6 +135,30 @@ the laptop without sitting at it. It's a door into an administrator account: onl
 network, keep it key-only (the script disables password login), and remove it with `-Disable` when you're
 done.
 
+## The TV side: Free My TV
+
+CouchCloud's library is only half of the living-room setup. The other half is the TV's home screen. Stock Google TV
+and Android TV home screens are ads and sponsored rows; [Free My TV](https://github.com/simbasjungles/free-my-tv) replaces
+them with a clean, fast home screen you draw yourself: your apps (Jellyfin first), the weather, what's trending, and a
+screensaver of film stills. It's a plain Android app in Java, built without Gradle, and it switches back to the stock
+home screen in one tap.
+
+![Free My TV home screen](free-my-tv/.github/preview.webp)
+
+[`free-my-tv/`](free-my-tv/) is my customized copy of it (MIT, attribution kept), with the changes I made for my own TV on
+top of upstream:
+
+- **Picks that learn.** Cards for films and shows from TMDB, with *Watched*, *Add to watchlist* and *Remove* verdicts
+  that sync to the TMDB account, so ratings survive a reinstall and feed the recommendations.
+- **Continue Watching** across apps, read from the TV's own media sessions.
+- **Voice search** through the TV's speech recognizer, falling back to Google's.
+- **Indian streaming apps** (JioHotstar, ZEE5, SonyLIV, Sun NXT, aha) mapped to TMDB's providers, and titles that only
+  the stream address identifies matched by name.
+- A crisp **focus ring** on every tile, 60 fps on a 1080p TCL.
+
+Build and install instructions are in [`free-my-tv/README.md`](free-my-tv/README.md). Put Jellyfin on the shelf
+(*Free My TV → Shelf*) and the TV turns on into your own library.
+
 ## Cheaper than buying a server
 
 A Raspberry Pi plus a big disk costs more than people expect, can't transcode 4K, and needs a powered USB
